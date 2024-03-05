@@ -7,24 +7,41 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <h1>Tạo Kỳ thi</h1>
-    <form id="examForm">
-        <label for="examName">Tên kỳ thi:</label>
-        <input type="text" id="examName" name="examName" required><br>
-        <label for="examDescription">Mô tả:</label>
-        <textarea id="examDescription" name="examDescription" required></textarea><br>
-        <label for="examType">Loại kỳ thi:</label>
-        <select id="examType" name="examType">
-            <option value="free">Tự do</option>
-            <option value="specificTime">Thời gian cụ thể</option>
-        </select><br>
-        <h2>Danh sách câu hỏi:</h2>
-        <div id="questionsContainer">
-            <!-- Câu hỏi sẽ được thêm vào đây -->
-        </div>
-        <button type="button" id="addQuestion">Thêm câu hỏi</button>
-        <input type="submit" value="Lưu">
-    </form>
+    <div id="container-selection">
+        <div class="box" id="btn-create-exam">Tạo kỳ thi</div>
+        <div class="box" id="btn-edit-exam">Chỉnh sửa kỳ thi</div>
+    </div>
+    <div id="create-exam-container" style="display: none;">
+        <form id="exam-form">
+            <div class="form-row">
+                <label for="exam-name">Tên kỳ thi:</label>
+                <input type="text" id="exam-name" name="exam-name" required>
+            </div>
+            
+            <div class="form-row">
+                <label for="exam-description">Mô tả:</label>
+                <textarea id="exam-description" name="exam-description" class="description-textarea"></textarea>
+            </div>
+            
+            <div class="form-row">
+                <label for="exam-type">Loại kỳ thi:</label>
+                <select id="exam-type" name="exam-type">
+                    <option value="free">Tự do</option>
+                    <option value="specific">Thời gian cụ thể</option>
+                </select>
+            </div>
+            
+            <div id="questions-container">
+                <!-- Câu hỏi sẽ được thêm vào đây -->
+            </div>
+            
+            <button type="button" id="add-question">Thêm câu hỏi</button>
+            <button type="button" class="submit-button">Lưu kỳ thi</button>
+        </form>
+    </div>
+    <div id="edit-exam-container" style="display: none;">
+        <!-- Danh sách các kỳ thi đã được lưu -->
+    </div>
     <script src="scripts/Quản lý kỳ thi.js"></script>
 </body>
 </html>

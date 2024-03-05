@@ -111,3 +111,67 @@ header {
     transition: margin-left 0.3s; /* Tạo hiệu ứng chuyển động */
 }
 
+/*
+Style of quản lý kỳ thi page*/
+.box {
+    width: 1100px;
+    height: 150px;
+    border: 2px solid #000;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+.box:hover {
+    background-color: #f0f0f0;
+}
+
+.form-row {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.description-textarea {
+    width: 200%; /* Điều chỉnh kích thước của hộp mô tả */
+    height: 150px; /* Kích thước cố định lớn */
+}
+
+.submit-button {
+    display: block; /* Đặt nút trên một dòng riêng biệt */
+    width: 200px; /* Đặt chiều rộng cố định */
+    height: 50px; /* Đặt chiều cao cố định */
+    margin: 50px; /* Đặt lề trên và dưới 20px, và căn giữa theo chiều ngang */
+    margin-left: 580px;
+    border: 2px solid #000; /* Đặt viền */
+    background-color: #f0f0f0; /* Đặt màu nền */
+    font-size: 20px; /* Đặt kích thước chữ */
+    font-weight: bold; /* Đặt độ rõ ràng của chữ */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột qua */
+}
+
+.submit-button:hover {
+    background-color: #e0e0e0; /* Thay đổi màu nền khi hover */
+}
+
+.exam-box {
+    border: 1px solid #ccc;
+    padding: 40px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.exam-box > div {
+    margin-bottom: 10px;
+}
+
+
+/*Style of xem kết quả page*/
