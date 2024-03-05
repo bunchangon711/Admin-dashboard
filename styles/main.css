@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    background-color: #f4f4f4; /* Màu nền cho header */
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.search-bar i {
+    margin-left: 10px; 
+}
+
+.search-bar input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    width: 400px;
+}
+
+.user-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    scale: 200%;
+    margin-right: 20px;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px; /* Ẩn sidebar ban đầu */
+    width: 150px;
+    height: 1000px;
+    background-color: #f44336;
+    color: #fff;
+    padding: 80px;
+    transition: left 0.3s; /* Tạo hiệu ứng slide */
+}
+
+.sidebar-toggle {       /*Icon để toggle sidebar */
+    position: fixed;    
+    top: 20px; /* Đặt icon ở góc trên cùng */
+    left: 30px; /* Đặt icon ở góc trái */
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000; /* Đảm bảo icon luôn nằm trên cùng */
+}
+
+.sidebar-open {
+    left: 0; /* Mở sidebar */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-item {
+    width: 100%;
+    list-style-type: none;
+    padding: 15px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s; /* Tạo hiệu ứng chuyển màu */
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #fff; /* Màu chữ mặc định */
+}
+
+.menu-item:hover {
+    background-color: #fff; /* Màu nền khi hover */
+}
+
+.menu-item:hover a {
+    color: #000; /* Màu chữ khi hover */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 50px;
+    transition: margin-left 0.3s; /* Tạo hiệu ứng chuyển động */
+}
+

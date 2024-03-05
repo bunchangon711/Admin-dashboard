@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm..." onkeydown="if (event.keyCode == 13) searchFunction()">
+                <i class="fa fa-search" onclick="searchFunction()"></i>
+            </div>
+        </div>
+        <div class="user-icon">
+            <img src="images/user_icon.png" alt="Icon người dùng">
+        </div>
+    </header>
+    <button class="sidebar-toggle">&#9776;</button> <!-- Icon toggle sidebar -->
+    <div class="container">
+        <div class="sidebar">
+            <button class="sidebar-toggle">&#9776;</button> <!-- Icon toggle sidebar -->
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li class="menu-item"><a href="#">Quản lý kỳ thi</a></li>
+                <li class="menu-item"><a href="#">Quản lý người dùng</a></li>
+                <li class="menu-item"><a href="#">Thống kê</a></li>
+                <li class="menu-item"><a href="#">Xem kết quả</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <!-- Nội dung chính sẽ được tải vào đây -->
+        </div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
