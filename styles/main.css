@@ -114,7 +114,7 @@ header {
 /*
 Style of quản lý kỳ thi page*/
 .box {
-    width: 1100px;
+    width: 1400px;
     height: 150px;
     border: 2px solid #000;
     margin: 10px;
@@ -175,6 +175,7 @@ Style of quản lý kỳ thi page*/
 
 
 /*Style of quản lý người dùng page*/
+
 /* Định nghĩa chiều rộng cho các header cell */
 /* Thêm margin cho các label và input */
 /* Tạo hộp bao quanh cho form và tạo khoảng cách giữa form và trang */
@@ -185,7 +186,7 @@ Style of quản lý kỳ thi page*/
     border: 1px solid #ccc; /* Tạo viền cho hộp */
     border-radius: 5px; /* Tạo góc tròn cho hộp */
     background-color: #f9f9f9; /* Tạo màu nền cho hộp */
-    margin-left: 300px;
+    margin-left: 400px;
     text-align: center;
 }
 
@@ -231,5 +232,41 @@ Style of quản lý kỳ thi page*/
 
 .header-cell,
 .user-table td {
+    text-align: center; /* Căn chỉnh giữa cho các cột của bảng */
+}
+
+
+/*Style of thống kê page*/
+/* Tạo màu nền cho bảng thống kê và tạo khoảng cách giữa bảng và form */
+#statisticsTable {
+    width: 100%;
+    margin-top: 50px; /* Tạo khoảng cách giữa bảng và form */
+    border-collapse: collapse; /* Tạo viền cho bảng */
+    background-color: #f9f9f9; /* Màu nền cho bảng */
+}
+
+/* Tạo màu nền cho các dòng và cột header */
+#statisticsTable thead {
+    background-color: #f2f2f2;
+}
+
+/* Tạo màu nền cho các dòng chẵn */
+#statisticsTable .even-row {
+    background-color: #f9f9f9;
+}
+
+/* Tạo màu nền cho các dòng không chẵn */
+#statisticsTable .odd-row {
+    background-color: #ffffff;
+}
+
+/* Tạo khoảng cách giữa các cột */
+#statisticsTable th, #statisticsTable td {
+    padding: 10px;
+    text-align: center;
+}
+
+.header-cell,
+#statisticsTable td {
     text-align: center; /* Căn chỉnh giữa cho các cột của bảng */
 }

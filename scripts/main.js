@@ -24,7 +24,7 @@ document.querySelector('.sidebar-toggle').addEventListener('click', function() {
     sidebar.classList.toggle('sidebar-open');
     if (sidebar.classList.contains('sidebar-open')) {
         // Khi sidebar mở, tăng margin-left của .main-content
-        mainContent.style.marginLeft = "500px"; // Giả sử sidebar có chiều rộng là 300px
+        mainContent.style.marginLeft = "350px"; // Giả sử sidebar có chiều rộng là 300px
     } else {
         // Khi sidebar đóng, giảm margin-left của .main-content
         mainContent.style.marginLeft = "250px";

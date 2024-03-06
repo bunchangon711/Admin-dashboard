@@ -8,6 +8,18 @@
 </head>
 <body>
     <h1>Thống kê</h1>
+    <div id="filterForm">
+        <label for="filterOption">Lọc theo:</label>
+        <select id="filterOption" name="filterOption">
+            <option value="">Chọn lựa chọn lọc</option>
+            <option value="examName">Tên kỳ thi</option>
+            <option value="totalParticipants">Tổng số lần tham gia</option>
+            <option value="completionRate">Tỷ lệ hoàn thành</option>
+            <option value="averageScore">Điểm trung bình</option>
+            <option value="examDate">Ngày thi</option>
+        </select>
+        <button onclick="filterStatistics()">Lọc</button>
+    </div>
     <div id="statisticsTable">
         <!-- Bảng thống kê sẽ được hiển thị ở đây -->
     </div>
