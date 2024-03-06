@@ -270,3 +270,13 @@ Style of quản lý kỳ thi page*/
 #statisticsTable td {
     text-align: center; /* Căn chỉnh giữa cho các cột của bảng */
 }
+
+/*Style of xem kết quả page*/
+#statisticsTable tbody tr:hover {
+    background-color: #f2f2f2; /* Màu nền khi chuột di chuyển qua */
+}
+
+#examDetailsTable th, #examDetailsTable td {
+    padding: 10px;
+    text-align: center; /* Căn chỉnh giữa cho các cột của bảng */
+}
