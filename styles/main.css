@@ -174,4 +174,9 @@ Style of quản lý kỳ thi page*/
 }
 
 
-/*Style of xem kết quả page*/
+/*Style of quản lý người dùng page*/
+/* Định nghĩa chiều rộng cho các header cell */
+.header-cell,
+.user-table td {
+    text-align: center; /* Căn chỉnh giữa cho các cột của bảng */
+}

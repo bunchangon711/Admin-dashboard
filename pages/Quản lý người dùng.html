@@ -18,10 +18,21 @@
             <option value="student">Sinh viên</option>
             <option value="admin">Quản trị viên</option>
         </select><br>
-        <button type="submit" value="Thêm">Thêm</button>
-        <button type="submit" value="Chỉnh sửa">Chỉnh sửa</button>
-        <button type="submit" value="Xóa">Xóa</button>
+        <button type="button" id="addUserBtn">Thêm</button>
     </form>
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th class="header-cell">Tên</th>
+                <th class="header-cell">Email</th>
+                <th class="header-cell">Vai trò</th>
+                <th class="header-cell">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dữ liệu người dùng sẽ được thêm vào đây -->
+        </tbody>
+    </table>
     <script src="scripts/Quản lý người dùng.js"></script>
 </body>
 </html>
