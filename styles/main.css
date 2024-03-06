@@ -176,6 +176,59 @@ Style of quản lý kỳ thi page*/
 
 /*Style of quản lý người dùng page*/
 /* Định nghĩa chiều rộng cho các header cell */
+/* Thêm margin cho các label và input */
+/* Tạo hộp bao quanh cho form và tạo khoảng cách giữa form và trang */
+#userForm {
+    width: 30%; /* Điều chỉnh theo nhu cầu */
+    margin: 50px auto; /* Tạo khoảng cách giữa form và trang */
+    padding: 20px; /* Tạo khoảng cách bên trong hộp */
+    border: 1px solid #ccc; /* Tạo viền cho hộp */
+    border-radius: 5px; /* Tạo góc tròn cho hộp */
+    background-color: #f9f9f9; /* Tạo màu nền cho hộp */
+    margin-left: 300px;
+    text-align: center;
+}
+
+/* Tạo khoảng cách giữa các phần tử trong form */
+#userForm label, #userForm input, #userForm select, #userForm button {
+    display: block;
+    margin: auto; /* Căn giữa các phần tử block */
+    width: 80%; /* Điều chỉnh theo nhu cầu */
+    height: 30px;
+}
+
+/* Tạo khoảng cách giữa các dòng */
+#userForm br {
+    margin-bottom: 20px;
+}
+
+/* Tạo màu nền cho bảng và tạo khoảng cách giữa bảng và form */
+#userTable {
+    width: 100%;
+    margin-top: 50px; /* Tạo khoảng cách giữa bảng và form */
+    border-collapse: collapse; /* Tạo viền cho bảng */
+}
+
+/* Tạo màu nền cho các dòng và cột header */
+#userTable thead {
+    background-color: #f2f2f2;
+}
+
+#userTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Tạo màu nền cho các dòng không chẵn */
+#userTable tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Tạo khoảng cách giữa các cột */
+#userTable th, #userTable td {
+    padding: 10px;
+    text-align: center;
+}
+
 .header-cell,
 .user-table td {
     text-align: center; /* Căn chỉnh giữa cho các cột của bảng */
