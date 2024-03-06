@@ -1,76 +1,71 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const searchForm = document.getElementById('searchForm');
-    const resultsDiv = document.getElementById('results');
-    const menu = document.getElementById('menu'); 
-  
-    // Dữ liệu mẫu cho sinh viên
-    const studentData = [
-      { 
-        name: 'Vũ Quang Đại',
-        studentID: 'B69HTTP420',
-        results: [
-          { exam: 'Midterm Exam', score: '85', status: 'Completed', timestamp: '2024-03-04 10:00:00' },
-          { exam: 'Final Exam', score: '90', status: 'Completed', timestamp: '2024-03-06 10:00:00' }
-        ]
-      },
-      { 
-        name: 'Nguyễn Thị Hương',
-        studentID: 'B69HTTP421',
-        results: [
-          { exam: 'Midterm Exam', score: '78', status: 'Completed', timestamp: '2024-03-03 09:00:00' },
-          { exam: 'Final Exam', score: '88', status: 'Completed', timestamp: '2024-03-05 09:00:00' }
-        ]
-      },
-      { 
-        name: 'Trần Văn Nam',
-        studentID: 'B69HTTP422',
-        results: [
-          { exam: 'Midterm Exam', score: '92', status: 'Completed', timestamp: '2024-03-04 11:00:00' },
-          { exam: 'Final Exam', score: '95', status: 'Completed', timestamp: '2024-03-06 11:00:00' }
-        ]
-      },
-      // Thêm dữ liệu sinh viên khác nếu cần
-    ];
-  
-    document.getElementById('searchButton').addEventListener('click', function() {
-        const studentQuery = document.getElementById('studentSearch').value;
-        fetchStudentData(studentQuery);
-    });
-  
-    function fetchStudentData(query) {
-      // Lấy dữ liệu sinh viên từ mảng dữ liệu mẫu
-      const filteredStudents = studentData.filter(student => {
-        return student.name.toLowerCase().includes(query.toLowerCase()) || student.studentID.includes(query);
-      });
-  
-      // Hiển thị kết quả
-      displayResults(filteredStudents);
-    }
-  
-    function displayResults(students) {
-      resultsDiv.innerHTML = '';
-      students.forEach(student => {
-        const studentDiv = document.createElement('div');
-        studentDiv.classList.add('student');
-  
-        const heading = document.createElement('h3');
-        heading.textContent = `${student.name} (${student.studentID})`;
-        studentDiv.appendChild(heading);
-  
-        const examsList = document.createElement('ul');
-        student.results.forEach(result => {
-          const examItem = document.createElement('li');
-          examItem.textContent = `${result.exam} - Score: ${result.score}, Status: ${result.status}, Timestamp: ${result.timestamp}`;
-          examsList.appendChild(examItem);
-        });
-        studentDiv.appendChild(examsList);
-  
-        resultsDiv.appendChild(studentDiv);
-      });
-    }
-  });
+// Dữ liệu demo
+// Dữ liệu demo
+const students = [
+    { id: 'SV003', name: 'Nguyễn Thị C', exams: [
+        { examId: 'KT001', score: 95, status: 'Hoàn thành', time: '2023-04-01', answers: [
+            { questionId: 'Q001', studentAnswer: 'A', correctAnswer: 'A', explanation: 'Giải thích cho câu hỏi 1' },
+            { questionId: 'Q002', studentAnswer: 'B', correctAnswer: 'C', explanation: 'Giải thích cho câu hỏi 2' }
+        ]},
+        { examId: 'KT002', score: 85, status: 'Hoàn thành', time: '2023-05-01', answers: [
+            { questionId: 'Q003', studentAnswer: 'D', correctAnswer: 'D', explanation: 'Giải thích cho câu hỏi 3' },
+            { questionId: 'Q004', studentAnswer: 'A', correctAnswer: 'B', explanation: 'Giải thích cho câu hỏi 4' }
+        ]}
+    ]},
+];
 
-  document.getElementById('searchButton').addEventListener('click', function() {
-    const studentQuery = document.getElementById('studentSearch').value;
-    fetchStudentData(studentQuery);
-});
+function searchStudentResults() {
+    const searchInput = document.getElementById('studentSearch').value;
+    const resultsContainer = document.getElementById('studentResults');
+    resultsContainer.innerHTML = ''; // Xóa kết quả trước đó
+
+    const foundStudents = students.filter(student => student.id.includes(searchInput) || student.name.includes(searchInput));
+
+    // Tạo bảng
+    const table = document.createElement('table');
+    table.id = 'statisticsTable';
+    table.style.width = '100%';
+    table.style.marginTop = '50px';
+    table.style.borderCollapse = 'collapse';
+    table.style.backgroundColor = '#f9f9f9';
+
+    // Tạo thead
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    ['Tên sinh viên', 'Mã số', 'Kỳ thi', 'Điểm số', 'Trạng thái', 'Thời gian tham gia'].forEach(header => {
+        const th = document.createElement('th');
+        th.textContent = header;
+        headerRow.appendChild(th);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+        // Tạo tbody
+    const tbody = document.createElement('tbody');
+    foundStudents.forEach((student, index) => {
+        student.exams.forEach(exam => {
+            const row = document.createElement('tr');
+            row.className = index % 2 === 0 ? 'even-row' : 'odd-row';
+            row.innerHTML = `
+                <td>${student.name}</td>
+                <td>${student.id}</td>
+                <td>${exam.examId}</td>
+                <td>${exam.score}</td>
+                <td>${exam.status}</td>
+                <td>${exam.time}</td>
+            `;
+            // Thêm dữ liệu chi tiết kết quả
+            const detailsCell = document.createElement('td');
+            exam.answers.forEach(answer => {
+                detailsCell.innerHTML += `
+                    <p>Câu hỏi ${answer.questionId}: ${answer.studentAnswer} (Đáp án đúng: ${answer.correctAnswer})</p>
+                    <p>${answer.explanation}</p>
+                `;
+            });
+            row.appendChild(detailsCell);
+            tbody.appendChild(row);
+        });
+    });
+    table.appendChild(tbody);
+
+    resultsContainer.appendChild(table);
+}

@@ -10,8 +10,7 @@ var statisticsData = [
     { examName: "Kỳ thi 6", totalParticipants: 140, completionRate: 80, averageScore: 76, examDate: "2023-09-01" },
     { examName: "Kỳ thi 7", totalParticipants: 160, completionRate: 92, averageScore: 83, examDate: "2023-10-01" },
     { examName: "Kỳ thi 8", totalParticipants: 170, completionRate: 90, averageScore: 81, examDate: "2023-11-01" },
-    { examName: "Kỳ thi 9", totalParticipants: 180, completionRate: 93, averageScore: 84, examDate: "2023-12-01" },
-    { examName: "Kỳ thi 10", totalParticipants: 190, completionRate: 91, averageScore: 85, examDate: "2024-01-01" }
+    { examName: "Kỳ thi 9", totalParticipants: 180, completionRate: 93, averageScore: 84, examDate: "2023-12-01" }
     // Thêm dữ liệu khác nếu cần
 ];
 
